@@ -1,0 +1,32 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Mehroj Saparov{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="bg-white text-gray-900">
+    <div class="max-w-[800px] mx-auto p-4">
+        <header class="text-center mb-8">
+            <h1 class="text-4xl font-bold">Mehroj Saparov</h1>
+            <p class="text-xl">"Backend Developer"</p>
+        </header>
+        <nav class="text-center mb-8">
+            <a href="{% url 'blog' %}" class="mx-2 hover:underline">Blog</a>
+            <a href="{% url 'about' %}" class="mx-2 hover:underline">About</a>
+            <a href="{% url 'lectures' %}" class="mx-2 hover:underline">Lectures</a>
+            <a href="{% url 'projects' %}" class="mx-2 hover:underline">Projects</a>
+            <a href="{% url 'contact' %}" class="mx-2 hover:underline">Contact Me</a>
+        </nav>
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+        <footer class="text-center mt-8">
+            <p>© 2026 Mehroj Saparov</p>
+        </footer>
+    </div>
+</body>
+</html>

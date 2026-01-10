@@ -1,0 +1,12 @@
+<!-- templates/blog_detail.html -->
+{% extends 'base.html' %}
+
+{% block title %}{{ object.title }} - Mehroj Saparov{% endblock %}
+
+{% block content %}
+<div class="prose mx-auto">
+    <h2 class="text-3xl font-bold mb-4">{{ object.title }}</h2>
+    <p class="text-sm text-gray-600 mb-8">{{ object.pub_date|date:"F j, Y" }}</p>
+    {{ content_html | safe }}
+</div>
+{% endblock %}
